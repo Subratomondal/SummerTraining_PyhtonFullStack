@@ -22,7 +22,8 @@ urlpatterns = [
     # path('', include('library.urls')),
     # path('products/', include('store.urls')),
     # path('courses/', include('courses.urls')),
-    path('jobs/', include('jobs.urls')),
+    # path('jobs/', include('jobs.urls')),
+    path('', include('clinic.urls')),
 ]
 
 
