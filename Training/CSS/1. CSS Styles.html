@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Examples</title>
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: beige;
+        }
+
+        .internal {
+            color: blue;
+            font-size: 24px;
+        }
+
+        .button-internal {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button-internal:hover {
+            background-color: rgb(154, 197, 13);
+        }
+    </style> 
+    <!-- Link to External CSS -->
+    <link rel="stylesheet" href="1. styles.css">
+</head>
+
+<body>
+    <h1 class="internal">This is a Heading </h1>
+    <p id="para1" style="color: red; font-size: 18px;">This is a paragraph styled inline.</p>
+    <button class="button-internal">Click Me (Internal CSS)</button>
+
+    <!-- Inline CSS -->
+    <p id="para2" style="font-size: 20px; color: purple;">This paragraph is styled with inline CSS.</p>
+
+
+
+    <h2 class="internal">This is a Heading</h2>
+    <p id="para3" style="color: red; font-size: 18px;">This is a paragraph styled inline.</p>
+    <input id="inp1" type="submit" value="Hello"> </input>
+
+    <!-- Inline CSS -->
+    <p id="para4" style="font-size: 20px; color: purple;">This paragraph is styled with inline CSS.</p>
+</body>
+
+</html>

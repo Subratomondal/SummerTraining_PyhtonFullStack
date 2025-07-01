@@ -1,0 +1,62 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Box Model Example */
+.box {
+    border: 5px solid black;
+    box-sizing: border-box; /* Ensures padding and border are included in width and height */
+    margin: 20px auto; /* Centering the box with margin auto */
+    padding: 20px; /* Adding space inside the box */
+    text-align: center; /* Center text inside the box */
+    color: white;
+    font-size: 18px;
+}
+
+/* Specific Box Styles */
+.box-1 {
+    background-color: lightblue;
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+}
+
+.box-2 {
+    background-color: lightcoral;
+    width: 50%; /* Width is 50% of the parent container */
+    height: 150px; /* Fixed height */
+    padding: 30px; /* Larger padding */
+    margin: 40px 0; /* Larger vertical margins */
+    border: 10px dashed #333; /* Dashed border */
+}
+
+.box-3 {
+    background-color: lightgreen;
+    width: 80%; /* Width is 80% of the parent container */
+    height: 50vh; /* Height is 50% of the viewport height */
+    padding: 10px; /* Smaller padding */
+    border: 5px solid #666; /* Solid border */
+}
+
