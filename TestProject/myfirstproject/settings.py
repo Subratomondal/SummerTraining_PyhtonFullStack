@@ -77,7 +77,8 @@ WSGI_APPLICATION = 'myfirstproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'clinicdb',
+        'NAME': 'clini.'
+                'cdb',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
