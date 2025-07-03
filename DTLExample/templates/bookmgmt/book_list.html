@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+</head>
+<body>
+    <h2>Available Books</h2>
+        <ul>
+            {% for book in books %}
+                {% include 'bookmgmt/_book_card.html' %}
+                {% empty %}
+                <li>No books found.</li>
+            {%  endfor %}
+        </ul>
+</body>
+</html>

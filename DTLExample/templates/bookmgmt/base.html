@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Books Page -{% endblock %}</title>
+</head>
+<body>
+<header>
+    <h1>My Books Collection</h1>
+</header>
+{% block content %}
+    {% include 'bookmgmt/book_list.html' %}
+{% endblock %}
+
+<footer>
+    Copyright 2025
+</footer>
+</body>
+</html>

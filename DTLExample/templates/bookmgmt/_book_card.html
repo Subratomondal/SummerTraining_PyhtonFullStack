@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<ul>
+    <li>
+        <strong>{{ book.title }}</strong> by {{ book.author }}
+        {% if book.available %}
+            <span style = "color:green;">(In Stock)</span>
+        {% else %}
+            <span style = "color:red;">(Out of Stock)</span>
+        {% endif %}
+    </li>
+</ul>
+
+</body>
+</html>
