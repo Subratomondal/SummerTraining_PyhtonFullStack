@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from studentsmgmt.models import Student
 
@@ -17,3 +17,19 @@ def student_create(request):
         return redirect('students_list')
     return render(request,'studentsmgmt/student_form.html')
 
+def student_update(request,roll_number):
+    student = Student.objects.get(roll_number=roll_number)
+    if request.method == 'POST':
+        student.roll_number =request.POST['roll_number' ]
+        student.name = request.POST['name']
+        student.age = request.POST['age']
+        student.save()
+        return redirect('students_list')
+    return render(request,'studentsmgmt/student_form.html')
+
+def student_delete(request,roll_number):
+    student = get_object_or_404(Student,roll_number=roll_number)
+    if request.method == 'POST':
+        student.delete()
+        return redirect('students_list')
+    return  render(request,'studentsmgmt/student_delete.html',{'student':student})

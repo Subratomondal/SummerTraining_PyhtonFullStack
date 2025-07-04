@@ -6,9 +6,12 @@
 </head>
 <body>
 <h3>Student List</h3>
+<a href="{% url 'students_create' %}">Add Student</a>
 <ul>
     {%  for student in students %}
         <li><strong>{{ student.roll_number }}</strong> - {{ student.name }} - {{ student.age }}</li>
+        [<a href="{% url 'students_update' student.roll_number %}">Update</a>]
+        [<a href="{% url 'students_delete' student.roll_number %}">Delete</a>]
         {% empty %}
         No student yet
     {%  endfor %}
