@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add / Edit Student Details</title>
+</head>
+<body>
+<h3>Student Details</h3>
+<form method ='POST'>
+    {% csrf_token %}
+    <label for ="roll_number">Roll No: </label>
+    <input type="text" id="roll_number" name="roll_number"/><br>
+    <label for ="name">Name: </label>
+    <input type="text" id="name" name="name"/><br>
+    <label for ="age">Age: </label>
+    <input type="number" id="age" name="age"/><br>
+    <input type="submit" value="Submit"/>
+    <input type="reset" value="Cancel"/>
+    <a href= '{% url 'students_list' %}'>Back to List</a>
+
+
+</form>
+</body>
+</html>

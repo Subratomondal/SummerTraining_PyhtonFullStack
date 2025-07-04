@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students List</title>
+</head>
+<body>
+<h3>Student List</h3>
+<ul>
+    {%  for student in students %}
+        <li><strong>{{ student.roll_number }}</strong> - {{ student.name }} - {{ student.age }}</li>
+        {% empty %}
+        No student yet
+    {%  endfor %}
+</ul>
+</body>
+</html>
