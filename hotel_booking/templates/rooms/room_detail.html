@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="bg-white p-6 rounded shadow">
+    <h2 class="text-2xl font-semibold mb-2">{{ room.room_type }} - Room {{ room.room_number }}</h2>
+    <p class="mb-2"><strong>Price:</strong> ₹{{ room.price_per_night }} per night</p>
+    <p><strong>Available:</strong> {{ room.is_available|yesno:"Yes,No" }}</p>
+
+    {% if user.is_superuser %}
+    <div class="mt-4">
+        <a href="{% url 'room_edit' room.pk %}" class="text-green-600 underline mr-4">Edit</a>
+        <a href="{% url 'room_delete' room.pk %}" class="text-red-600 underline">Delete</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

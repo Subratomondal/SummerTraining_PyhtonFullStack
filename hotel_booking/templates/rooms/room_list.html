@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-2xl font-bold mb-4">Hotel Room Management</h2>
+
+<!-- CREATE Room Form -->
+<form method="POST" class="bg-white p-4 shadow rounded mb-6">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="create_room" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800">
+        Add Room
+    </button>
+</form>
+
+<!-- LIST + UPDATE + DELETE Rooms -->
+<div class="grid md:grid-cols-2 gap-4">
+    {% for room in rooms %}
+    <div class="bg-white p-4 shadow rounded">
+        <!-- UPDATE Room -->
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="hidden" name="room_id" value="{{ room.id }}">
+            <input type="text" name="room_number" value="{{ room.room_number }}" class="border p-2 w-full mb-2">
+            <select name="room_type" class="border p-2 w-full mb-2">
+                <option {% if room.room_type == 'Single' %}selected{% endif %}>Single</option>
+                <option {% if room.room_type == 'Double' %}selected{% endif %}>Double</option>
+                <option {% if room.room_type == 'Suite' %}selected{% endif %}>Suite</option>
+            </select>
+            <input type="number" name="price_per_night" value="{{ room.price_per_night }}" class="border p-2 w-full mb-2">
+            <label class="block mb-2">
+                <input type="checkbox" name="is_available" {% if room.is_available %}checked{% endif %}>
+                Available
+            </label>
+            <button type="submit" name="update_room" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-800 w-full">
+                Update
+            </button>
+        </form>
+
+        <!-- DELETE Room (separate form) -->
+        <form method="POST" action="{% url 'room_delete' room.pk %}" class="mt-2">
+            {% csrf_token %}
+            <button type="submit" class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-800 w-full">
+                Delete
+            </button>
+        </form>
+    </div>
+    {% empty %}
+        <p>No rooms available.</p>
+    {% endfor %}
+</div>
+{% endblock %}
