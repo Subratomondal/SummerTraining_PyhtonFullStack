@@ -1,0 +1,37 @@
+{% extends 'courses/base.html' %}
+{% load form_tags %}
+{% block content %}
+<h2 class="text-2xl font-semibold mb-4">
+    {% if form.instance.pk %}Edit Course{% else %}Add New Course{% endif %}
+</h2>
+<form method="POST" class="bg-white p-6 rounded shadow max-w-xl space-y-4">
+    {% csrf_token %}
+
+    <div>
+        <label class="block mb-1 font-semibold">Title</label>
+        {{ form.title|add_class:"w-full border border-gray-400 px-3 py-2 rounded bg-white" }}
+    </div>
+
+    <div>
+        <label class="block mb-1 font-semibold">Instructor</label>
+        {{ form.instructor|add_class:"w-full border border-gray-400 px-3 py-2 rounded bg-white" }}
+    </div>
+
+    <div>
+        <label class="block mb-1 font-semibold">Description</label>
+        {{ form.description|add_class:"w-full border border-gray-400 px-3 py-2 rounded bg-white" }}
+    </div>
+
+    <div>
+        <label class="block mb-1 font-semibold">Duration</label>
+        {{ form.duration|add_class:"w-full border border-gray-400 px-3 py-2 rounded bg-white" }}
+    </div>
+
+    <div>
+        <label class="block mb-1 font-semibold">Category</label>
+        {{ form.category|add_class:"w-full border border-gray-400 px-3 py-2 rounded bg-white" }}
+    </div>
+
+    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800">Save</button>
+</form>
+{% endblock %}
