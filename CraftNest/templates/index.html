@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to CraftNest{% endblock %}
+
+{% block content %}
+    <!-- Categories Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Explore Categories</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">Home Decor</div>
+            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">Jewelry</div>
+            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">Pottery</div>
+            <div class="bg-white border rounded-xl p-6 text-center shadow-sm">Handwoven</div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div class="bg-white border rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-semibold">Macrame Wall Hanging</h3>
+                <p class="text-sm text-gray-500">By: Artisan A</p>
+            </div>
+            <div class="bg-white border rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-semibold">Clay Mug Set</h3>
+                <p class="text-sm text-gray-500">By: Artisan B</p>
+            </div>
+            <div class="bg-white border rounded-xl p-4 shadow-sm">
+                <h3 class="text-lg font-semibold">Beaded Necklace</h3>
+                <p class="text-sm text-gray-500">By: Artisan C</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Why Choose CraftNest?</h2>
+        <p class="text-gray-700">Support local creators, discover unique handcrafted items, and shop ethically.</p>
+    </section>
+
+    <!-- Become a Seller Section -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Become a Seller</h2>
+        <p class="mb-2 text-gray-700">Ready to showcase your creations?</p>
+        <a href="/users/register/" class="inline-block bg-teal-600 text-white px-5 py-2 rounded hover:bg-teal-700">
+            Sign up now
+        </a>
+    </section>
+{% endblock %}

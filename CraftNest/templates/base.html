@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CraftNest – Local Artisan Marketplace{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold text-teal-600">CraftNest</h1>
+            <p class="text-gray-600">Connecting You with Local Artisans & Handmade Treasures</p>
+            <nav class="mt-4 space-x-4">
+                <a href="/" class="text-teal-700 hover:underline">Home</a>
+                <a href="/products/" class="text-teal-700 hover:underline">Products</a>
+                <a href="/users/dashboard/" class="text-teal-700 hover:underline ">Dashboard</a>
+                <a href="/users/login/" class="text-teal-700 hover:underline">Login</a>
+                <a href="/users/register/" class="text-teal-700 hover:underline">Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-10 px-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center py-4 mt-10">
+        <p class="text-gray-600">© 2025 CraftNest. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
