@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'marketplace',
+    'users',
+    'products',
+    'orders',
+
 ]
 
 MIDDLEWARE = [
@@ -76,10 +79,18 @@ WSGI_APPLICATION = 'CraftNest.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'craftnestdb',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
+#Auth module for users profile
+AUTH_USER_MODEL = 'users.User'
+
 
 
 # Password validation
