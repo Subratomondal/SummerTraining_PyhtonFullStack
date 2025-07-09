@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
+    # 'users',
     'products',
     'orders',
+    'users.apps.UsersConfig',
 
 ]
 
@@ -91,6 +92,7 @@ DATABASES = {
 #Auth module for users profile
 AUTH_USER_MODEL = 'users.User'
 
+LOGIN_REDIRECT_URL ='/products/dashboard/'
 
 
 # Password validation
